@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HortifrutiSF.Domain.Entidade
 {
-    internal class ProdutoEntrada
+    public class ProdutoEntrada : EntidadeBase
     {
+
     }
 }
