@@ -1,4 +1,8 @@
+using HortifruitiSF.Application.Application;
+using HortifruitiSF.Application.Interface;
+using HortifrutiSF.Domain.Repositories;
 using HortifrutiSF.Repo;
+using HortifrutiSF.Repo.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,6 +43,9 @@ namespace HortifruitiSF.API
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IProdutoApplication, ProdutoApplication>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

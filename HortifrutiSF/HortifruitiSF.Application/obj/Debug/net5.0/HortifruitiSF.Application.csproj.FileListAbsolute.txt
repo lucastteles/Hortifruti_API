@@ -1,0 +1,15 @@
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\bin\Debug\net5.0\HortifruitiSF.Application.deps.json
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\bin\Debug\net5.0\HortifruitiSF.Application.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\bin\Debug\net5.0\ref\HortifruitiSF.Application.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\bin\Debug\net5.0\HortifruitiSF.Application.pdb
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\bin\Debug\net5.0\HortifrutiSF.Domain.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\bin\Debug\net5.0\HortifrutiSF.Domain.pdb
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.csproj.AssemblyReference.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.AssemblyInfoInputs.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.AssemblyInfo.cs
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.csproj.CoreCompileInputs.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.csproj.CopyComplete
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\ref\HortifruitiSF.Application.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.Application\obj\Debug\net5.0\HortifruitiSF.Application.pdb

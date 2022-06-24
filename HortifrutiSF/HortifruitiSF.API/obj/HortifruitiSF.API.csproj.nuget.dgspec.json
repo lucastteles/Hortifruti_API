@@ -28,6 +28,9 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifruitiSF.Application\\HortifruitiSF.Application.csproj": {
+                "projectPath": "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifruitiSF.Application\\HortifruitiSF.Application.csproj"
+              },
               "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifrutiSF.Repo\\HortifrutiSF.Repo.csproj": {
                 "projectPath": "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifrutiSF.Repo\\HortifrutiSF.Repo.csproj"
               }
@@ -85,6 +88,64 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifruitiSF.Application\\HortifruitiSF.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifruitiSF.Application\\HortifruitiSF.Application.csproj",
+        "projectName": "HortifruitiSF.Application",
+        "projectPath": "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifruitiSF.Application\\HortifruitiSF.Application.csproj",
+        "packagesPath": "C:\\Users\\55219\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifruitiSF.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\55219\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifrutiSF.Domain\\HortifrutiSF.Domain.csproj": {
+                "projectPath": "C:\\Users\\55219\\Documents\\Projetos GIT\\Hortifruti_API\\HortifrutiSF\\HortifrutiSF.Domain\\HortifrutiSF.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "HortifruitiSF.API/1.0.0": {
         "dependencies": {
+          "HortifruitiSF.Application": "1.0.0",
           "HortifrutiSF.Repo": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.17",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.17",
@@ -1372,6 +1373,17 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "HortifruitiSF.Application/1.0.0": {
+        "dependencies": {
+          "HortifrutiSF.Domain": "1.0.0"
+        },
+        "runtime": {
+          "HortifruitiSF.Application.dll": {}
+        },
+        "compile": {
+          "HortifruitiSF.Application.dll": {}
         }
       },
       "HortifrutiSF.Domain/1.0.0": {
@@ -3812,6 +3824,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "HortifruitiSF.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "HortifrutiSF.Domain/1.0.0": {
       "type": "project",

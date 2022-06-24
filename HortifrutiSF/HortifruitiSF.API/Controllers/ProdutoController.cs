@@ -1,8 +1,12 @@
-﻿using HortifrutiSF.Domain.Entidade;
+﻿using HortifruitiSF.Application.Interface;
+using HortifruitiSF.Application.ViewModel;
+using HortifrutiSF.Domain.Entidade;
 using HortifrutiSF.Repo;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,19 +16,26 @@ namespace HortifruitiSF.API.Controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
-        
+        private readonly IProdutoApplication _produtoApplication;
+
+        public ProdutoController(IProdutoApplication produtoApplication)
+        {
+            _produtoApplication = produtoApplication;
+        }
 
         [HttpPost]
-        public ActionResult Adicionar()
+        public async Task<IActionResult> Adicionar(ProdutoViewModel produtoVm)
         {
-            string nome = "paçoca";
-            string descricao = "Rafael";
+            try
+            {
+                await _produtoApplication.AdicionarProduto(produtoVm);
 
-            var produto = new Produto(nome, descricao);
-
-
-
-            return Ok();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }       
         }
 
 

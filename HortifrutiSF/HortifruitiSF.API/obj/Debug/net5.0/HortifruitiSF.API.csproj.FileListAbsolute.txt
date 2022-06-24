@@ -61,3 +61,6 @@ C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\ref\HortifruitiSF.API.dll
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.pdb
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.genruntimeconfig.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.Application.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.Application.pdb
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.MvcApplicationPartsAssemblyInfo.cs

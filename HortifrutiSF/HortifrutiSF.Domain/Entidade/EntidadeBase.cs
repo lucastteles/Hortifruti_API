@@ -10,7 +10,9 @@ namespace HortifrutiSF.Domain.Entidade
     {
         public EntidadeBase()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
+            DataAlteracao = DateTime.Now;
+            DataCadastro = DateTime.Now;
         }
 
         public Guid Id { get; set; }
