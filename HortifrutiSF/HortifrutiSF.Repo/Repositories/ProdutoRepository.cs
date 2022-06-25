@@ -20,19 +20,19 @@ namespace HortifrutiSF.Repo.Repositories
 
         public async Task AdicionarProduto(Produto produto)
         {
-            await _produtoContext.Produto.AddAsync(produto);
+            await _produtoContext.Produtos.AddAsync(produto);
             _produtoContext.SaveChanges();
         }
 
         public async Task AtualizarProduto(Produto produto)
         {
-            _produtoContext.Produto.Update(produto);
+            _produtoContext.Produtos.Update(produto);
             _produtoContext.SaveChanges();
         }
 
         public async Task<Produto> ObterProdutoPorId(Guid idProduto)
         {
-            return await _produtoContext.Produto.FirstOrDefaultAsync(x => x.Id == idProduto);
+            return await _produtoContext.Produtos.FirstOrDefaultAsync(x => x.Id == idProduto);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace HortifrutiSF.Repo.Mapping
 
             //RELACIONAMENTO
             builder.HasOne(pd => pd.Produto)
-                .WithMany(v => v.ProdutoEntrada)
+                .WithMany(v => v.ProdutoEntradas)
                 .HasForeignKey(pd => pd.ProdutoId);
         }
     }

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "da6db3cc-27c5-47cf-bd77-9985062c84d5": {
+      "ProjectGuid": "da6db3cc-27c5-47cf-bd77-9985062c84d5",
+      "DisplayName": "HortifruitiSF.API",
+      "ColorIndex": 0
+    },
+    "16f5f645-c128-418c-977c-a57034b897b0": {
+      "ProjectGuid": "16f5f645-c128-418c-977c-a57034b897b0",
+      "DisplayName": "HortifrutiSF.Domain",
+      "ColorIndex": 1
+    },
+    "e746a21e-23cf-49e4-a495-b239fb12a56d": {
+      "ProjectGuid": "e746a21e-23cf-49e4-a495-b239fb12a56d",
+      "DisplayName": "HortifrutiSF.Repo",
+      "ColorIndex": 2
+    },
+    "aaa4ca5c-8a0d-45e7-ae6e-73aae9b7cea5": {
+      "ProjectGuid": "aaa4ca5c-8a0d-45e7-ae6e-73aae9b7cea5",
+      "DisplayName": "HortifruitiSF.Application",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

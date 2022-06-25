@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HortifrutiSF.Repo.Repositories
 {
-    public class ProdutoEntradaRepository : IProdutoEntradaRepository
+    public class ProdutoEntradaRepository : IProdutoEntradaRepository 
     {
         private readonly ProdutoContext _produtoContext;
 
@@ -19,22 +19,22 @@ namespace HortifrutiSF.Repo.Repositories
             _produtoContext = produtoContext;
         }
 
-
-        public async Task AdicionarProdutoEntrada(ProdutoEntrada produtoEntrada)
+        public async Task AdicionarProdutoEntradas(ProdutoEntrada produtoEntrada)
         {
-          await  _produtoContext.ProdutoEntrada.AddAsync(produtoEntrada);
+            await _produtoContext.ProdutoEntradas.AddAsync(produtoEntrada);
             _produtoContext.SaveChanges();
         }
 
-        public async Task AtualizarProdutoEntrada(ProdutoEntrada produtoEntrada)
+
+        public async Task AtualizarProdutoEntradas(ProdutoEntrada produtoEntrada)
         {
-            _produtoContext.ProdutoEntrada.Update(produtoEntrada);
+            _produtoContext.ProdutoEntradas.Update(produtoEntrada);
             _produtoContext.SaveChanges();
         }
 
-        public async Task<ProdutoEntrada> ObterProdutoEntradaPorId(Guid idProdutoEntrada)
+        public async Task<ProdutoEntrada> ObterProdutoEntradasPorId(Guid idProdutoEntrada)
         {
-            return await _produtoContext.ProdutoEntrada.FirstOrDefaultAsync(x => x.Id == idProdutoEntrada);
+            return await _produtoContext.ProdutoEntradas.FirstOrDefaultAsync(x => x.Id == idProdutoEntrada);
         }
     }
 }

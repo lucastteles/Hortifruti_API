@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace HortifrutiSF.Domain.Repositories
 {
-    public interface IProdutoEntradasRepository
+    public interface IProdutoEntradaRepository
     {
-        Task AdicionarProduto(ProdutoEntrada produtoEntrada);
-        Task AtualizarProduto(ProdutoEntrada produtoEntrada);
-        Task <ProdutoEntrada> ObterProdutoEntradaPorId (Guid idProdutoEntrada);
+        Task AdicionarProdutoEntradas(ProdutoEntrada produtoEntrada);
+        Task AtualizarProdutoEntradas(ProdutoEntrada produtoEntrada);
+        Task <ProdutoEntrada> ObterProdutoEntradasPorId (Guid idProdutoEntrada);
     }
 }
