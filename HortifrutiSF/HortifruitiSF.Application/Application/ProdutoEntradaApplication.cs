@@ -22,8 +22,10 @@ namespace HortifruitiSF.Application.Application
         public async Task AdicionarProdutoEntrada(ProdutoEntradaViewModel produtoEntradaVM)
         {
             var produtoEntrada = new ProdutoEntrada(produtoEntradaVM.Preco,
-                                                     produtoEntradaVM.Quantidade,
-                                                     produtoEntradaVM.Peso);
+                                                    produtoEntradaVM.Quantidade,
+                                                    produtoEntradaVM.Peso,
+                                                    produtoEntradaVM.ProdutoId,
+                                                    produtoEntradaVM.Fornecedor);
 
             await _produtoEntradaRepository.AdicionarProdutoEntradas(produtoEntrada);
         }

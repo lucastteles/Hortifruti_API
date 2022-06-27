@@ -12,7 +12,8 @@ namespace HortifruitiSF.Application.ViewModel
         public decimal Preco { get; set; }
         public int Quantidade { get; set; }
         public float Peso { get; set; }
+        public string Fornecedor { get; set; }
         public Guid ProdutoId { get; set; }
-        public Produto Produto { get; set; }
+       
     }
 }

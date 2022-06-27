@@ -12,21 +12,26 @@ namespace HortifrutiSF.Domain.Entidade
 
         private ProdutoEntrada() { }
 
-        public ProdutoEntrada(decimal preco, int quantidade, float peso)
+        public ProdutoEntrada( decimal preco, int quantidade,  float peso,  Guid produtoId, string fornecedor)
         {
             Preco = preco;
             Quantidade = quantidade;
             Peso = peso;
+            Fornecedor = fornecedor; 
+            ProdutoId = produtoId;
 
+             
             ValidarPreco();
             ValidarQuantidade();
             ValidarPeso();
+            ValidarFornecedor();
         }
 
 
         public decimal Preco { get; set; }
         public int Quantidade { get; set; }
         public float Peso { get; set; }
+        public string Fornecedor { get; set; }
         public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
 
@@ -59,6 +64,14 @@ namespace HortifrutiSF.Domain.Entidade
 
             }
 
+        }
+
+        private void ValidarFornecedor()
+        {
+            if(Fornecedor.Length > 200)
+            {
+                throw new Exception("O campo Fornecedor não pode ser maior que 200 caracteres");
+            }
         }
 
     }
