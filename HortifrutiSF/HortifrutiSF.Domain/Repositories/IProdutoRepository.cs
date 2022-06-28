@@ -12,5 +12,7 @@ namespace HortifrutiSF.Domain.Repositories
         Task AdicionarProduto(Produto produto);
         Task AtualizarProduto(Produto produto);
         Task<Produto> ObterProdutoPorId(Guid idProduto);
+        Task<List<Produto>> ObterTodosOsProdutos();
+        public Task Deletar(Guid idProduto);
     }
 }

@@ -20,6 +20,11 @@
       "ProjectGuid": "aaa4ca5c-8a0d-45e7-ae6e-73aae9b7cea5",
       "DisplayName": "HortifruitiSF.Application",
       "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 4

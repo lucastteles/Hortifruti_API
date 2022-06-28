@@ -14,13 +14,13 @@ namespace HortifruitiSF.API.Controllers
     {
         private readonly IProdutoEntradaApplication _produtoEntradaApplication;
 
-            public ProdutoEntradaController(IProdutoEntradaApplication produtoEntradaApplication)
-            {
-              _produtoEntradaApplication = produtoEntradaApplication;
-            }
+        public ProdutoEntradaController(IProdutoEntradaApplication produtoEntradaApplication)
+        {
+            _produtoEntradaApplication = produtoEntradaApplication;
+        }
 
         [HttpPost]
-        public async Task <IActionResult> Adicionar(ProdutoEntradaViewModel produtoEntradaVM)
+        public async Task<IActionResult> Adicionar(ProdutoEntradaViewModel produtoEntradaVM)
         {
             try
             {
@@ -34,5 +34,36 @@ namespace HortifruitiSF.API.Controllers
             }
         }
 
+        [HttpGet("ObterTodosProdutoEntradas")]
+        public async Task<IActionResult> Obter()
+        {
+            var produtoEntradas = await _produtoEntradaApplication.ObterProdutoEntradasApplication();
+
+            return Ok(produtoEntradas);
+        }
+
+        [HttpGet("idProdutoEntrada")]
+        public async Task<IActionResult> ObterPorId(Guid idProdutoEntrada)
+        {
+            var produtoEntrada = await _produtoEntradaApplication.ObterProdutoEntradasPorId(idProdutoEntrada);
+
+            return Ok(produtoEntrada);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Atualizar(ProdutoEntradaViewModel produtoEntradaVm)
+        {
+            await _produtoEntradaApplication.AtualizarProdutoEntrada(produtoEntradaVm);
+
+            return Ok();
+        }
+
+        [HttpDelete("idProdutoEntrada")]
+        public async Task<IActionResult> Delete(Guid idProdutoEntrada)
+        {
+            await _produtoEntradaApplication.DeletarProdutoEntrada(idProdutoEntrada);
+
+            return Ok();
+        }
     }
 }

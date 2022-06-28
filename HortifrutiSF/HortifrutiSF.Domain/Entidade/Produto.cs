@@ -20,6 +20,7 @@ namespace HortifrutiSF.Domain.Entidade
             ValidarNome();
             ValidarMaximo200Caracteres();
             ValidarDescricao();
+
         }
 
 
@@ -53,6 +54,18 @@ namespace HortifrutiSF.Domain.Entidade
             {
                 throw new Exception("O campo nome não pode ser maior que 200 caracteres");
             }
+        }
+
+        public void AtualizarDadosDoProduto(string nome, string descricao)
+        {
+            Nome = nome;
+            Descricao = descricao;
+
+            ValidarNome();
+            ValidarMaximo200Caracteres();
+            ValidarDescricao();
+
+
         }
 
     }

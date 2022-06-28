@@ -1,4 +1,5 @@
-﻿using HortifruitiSF.Application.ViewModel;
+﻿using HortifruitiSF.Application.Dto;
+using HortifruitiSF.Application.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,9 @@ namespace HortifruitiSF.Application.Interface
     public interface IProdutoEntradaApplication
     {
         Task AdicionarProdutoEntrada(ProdutoEntradaViewModel produtoEntradaVM);
+        Task AtualizarProdutoEntrada(ProdutoEntradaViewModel produtoEntradaVm);
+        Task<List<ProdutoEntradaDto>> ObterProdutoEntradasApplication();
+        Task<ProdutoEntradaDto> ObterProdutoEntradasPorId(Guid idProduto);
+        Task DeletarProdutoEntrada(Guid idProdutoEntrada);
     }
 }

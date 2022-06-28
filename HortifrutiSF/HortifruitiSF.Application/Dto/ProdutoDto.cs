@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HortifruitiSF.Application.ViewModel
+namespace HortifruitiSF.Application.Dto
 {
-    public class ProdutoViewModel
+    public class ProdutoDto
     {
-        public Guid IdProduto { get; set; }
+        public Guid ProdutoId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+        public DateTime Data { get; set; }
     }
 }

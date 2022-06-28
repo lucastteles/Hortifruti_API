@@ -35,8 +35,43 @@ namespace HortifruitiSF.API.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }       
+            }
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Obter()
+        {
+            var produtos = await _produtoApplication.ObterProdutosApplication();
+
+            return Ok(produtos);
+        }
+
+        [HttpGet("idProduto")]
+        public async Task<IActionResult> ObterPorId(Guid idProduto)
+        {
+            var produto = await _produtoApplication.ObterProdutoPorId(idProduto);
+
+            return Ok(produto);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Atualizar(ProdutoViewModel produtoVm)
+        {
+            await _produtoApplication.AtualizarProduto(produtoVm);
+
+            return Ok();
+        }
+
+        [HttpDelete("idProduto")]
+        public async Task<IActionResult> Delete(Guid idProduto)
+        {
+            await _produtoApplication.DeletarProduto(idProduto);
+
+            return Ok();
+        }
+
+
 
 
     }
