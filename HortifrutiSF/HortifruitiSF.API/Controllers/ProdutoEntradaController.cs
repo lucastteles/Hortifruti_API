@@ -65,5 +65,22 @@ namespace HortifruitiSF.API.Controllers
 
             return Ok();
         }
+
+        [HttpGet("ObterPorData/{dataInicial}/{dataFinal}")]
+        public async Task<IActionResult> ObterEntradasPorData(DateTime dataInicial, DateTime dataFinal)
+        {
+           var resultado = await _produtoEntradaApplication.ObterProdutoEntradaPorData(dataInicial, dataFinal);
+
+            return Ok(resultado);
+        }
+
+        [HttpGet("ObterSaldoPorData/{dataInicial}/{dataFinal}")]
+        public IActionResult ObterSaldoPorData(DateTime dataInicial, DateTime dataFinal)
+        {
+            var saldo =  _produtoEntradaApplication.ObterSaldoPorData(dataInicial, dataFinal);
+
+            return Ok(saldo);
+        }
+
     }
 }

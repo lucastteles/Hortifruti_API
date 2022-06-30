@@ -42,10 +42,10 @@ namespace HortifruitiSF.Application.Application
                                                            produtoEntradaVm.Peso,
                                                            produtoEntradaVm.ProdutoId,
                                                            produtoEntradaVm.Fornecedor);
-                                                         
-                                                           
 
-            await  _produtoEntradaRepository.AtualizarProdutoEntradas(produtoEntradas);
+
+
+            await _produtoEntradaRepository.AtualizarProdutoEntradas(produtoEntradas);
         }
 
         public async Task DeletarProdutoEntrada(Guid idProdutoEntrada)
@@ -95,6 +95,37 @@ namespace HortifruitiSF.Application.Application
             };
 
             return produtoEntradaDto;
+        }
+
+        public async Task<List<ProdutoEntradaDto>> ObterProdutoEntradaPorData(DateTime? dataInicial, DateTime? dataFinal)
+        {
+            var produtosEntrada = await _produtoEntradaRepository.ObterProdutoEntradaPorData(dataInicial, dataFinal);
+
+            var listaProdutoEntradas = new List<ProdutoEntradaDto>();
+
+            foreach (var produtoEntrada in produtosEntrada)
+            {
+                var produtoEntradaDto = new ProdutoEntradaDto()
+                {
+                    Preco = produtoEntrada.Preco,
+                    Quantidade = produtoEntrada.Quantidade,
+                    Peso = produtoEntrada.Peso,
+                    ProdutoId = produtoEntrada.ProdutoId,
+                    Data = produtoEntrada.DataCadastro.ToString("dd/MM/yyyy HH:mm"),
+                    Fornecedor = produtoEntrada.Fornecedor,
+                    NomeProduto = produtoEntrada.Produto.Nome,
+                    IdProdutoEntrada = produtoEntrada.Id
+                };
+
+                listaProdutoEntradas.Add(produtoEntradaDto);
+            }
+            return listaProdutoEntradas;
+        }
+
+        public decimal ObterSaldoPorData(DateTime? dataInicial, DateTime? dataFinal)
+        {
+            return  _produtoEntradaRepository.ObterSaldoPorData(dataInicial, dataFinal);
+            
         }
     }
 }

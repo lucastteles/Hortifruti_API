@@ -15,5 +15,7 @@ namespace HortifruitiSF.Application.Interface
         Task<List<ProdutoEntradaDto>> ObterProdutoEntradasApplication();
         Task<ProdutoEntradaDto> ObterProdutoEntradasPorId(Guid idProduto);
         Task DeletarProdutoEntrada(Guid idProdutoEntrada);
+        Task<List<ProdutoEntradaDto>> ObterProdutoEntradaPorData(DateTime? dataInicial, DateTime? dataFinal);
+        decimal ObterSaldoPorData( DateTime? dataInicial, DateTime? dataFinal);
     }
 }
