@@ -14,7 +14,7 @@ namespace HortifrutiSF.Domain.Entidade
 
         public ProdutoEntrada(decimal preco, int quantidade, float peso, Guid produtoId, string fornecedor)
         {
-            Preco = preco;
+            Preco = preco; //obtenho o valor total de produto
             Quantidade = quantidade;
             Peso = peso;
             Fornecedor = fornecedor;
@@ -34,6 +34,7 @@ namespace HortifrutiSF.Domain.Entidade
         public string Fornecedor { get; set; }
         public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
+        public ICollection<Venda> Vendas { get; set; }
 
 
         private void ValidarPreco()

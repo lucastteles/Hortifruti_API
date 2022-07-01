@@ -28,7 +28,7 @@ namespace HortifrutiSF.Domain.Entidade
         public string Descricao { get; set; }
 
         public ICollection<ProdutoEntrada> ProdutoEntradas { get; set; }
-
+        public ICollection<Venda> Vendas { get; set; }
 
 
         //Validação
