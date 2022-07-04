@@ -14,7 +14,7 @@ namespace HortifrutiSF.Domain.Entidade
 
         public ProdutoEntrada(decimal preco, int quantidade, float peso, Guid produtoId, string fornecedor)
         {
-            Preco = preco; //obtenho o valor total de produto
+            Preco = preco; //obtenho o valor total de produto // Quanto eu gastei de mercadoria
             Quantidade = quantidade;
             Peso = peso;
             Fornecedor = fornecedor;
@@ -34,7 +34,7 @@ namespace HortifrutiSF.Domain.Entidade
         public string Fornecedor { get; set; }
         public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
-        public ICollection<Venda> Vendas { get; set; }
+        
 
 
         private void ValidarPreco()
@@ -99,33 +99,3 @@ namespace HortifrutiSF.Domain.Entidade
 
 
 
-
-//RELACIONAMENTO
-//builder.HasOne(pd => pd.Produto)
-//    .WithMany(v => v.ProdutoEntrada)
-//    .HasForeignKey(pd => pd.ProdutoId);
-
-
-/*
- * -------****--------- Produto -------- *****-------
-  - vai ter que cadastrar produtos no sistema (Entidade Produto)
- para cadastrar  o produto ele precisa informar o nome do produto
- regra: Nome não pode ser vazio
-
-
--------****--------- ProdutoEntrada -------- *****-------
- - Entrada do produto (na entidade ProdutoEntrada)
-passo 1:selecionar o produto 
-passo 2: informar preço 
-passo 3: informar a quantidade 
-passo 4: informar o peso 
-passo 5: Salvar as informações
- 
- regra:
- O ProdutoId precisa ser informado
- O Preço não pode ser zero ou negativo
- A Quantidade não pode ser zero ou negativo
- O Peso não pode ser negativo
-
- 
- */

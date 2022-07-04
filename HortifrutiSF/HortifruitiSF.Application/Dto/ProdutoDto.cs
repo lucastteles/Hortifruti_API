@@ -11,6 +11,7 @@ namespace HortifruitiSF.Application.Dto
         public Guid ProdutoId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+        public decimal PrecoVenda { get; set; }
         public DateTime Data { get; set; }
     }
 }

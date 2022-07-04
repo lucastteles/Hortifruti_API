@@ -12,22 +12,23 @@ namespace HortifrutiSF.Domain.Entidade
         private Produto() { }
 
 
-        public Produto(string nome, string descricao)
+        public Produto(string nome, string descricao, decimal precoVenda)
         {
             Nome = nome;
             Descricao = descricao;
+            PrecoVenda = precoVenda;
 
-            ValidarNome();
+            ValidarNome(); 
             ValidarMaximo200Caracteres();
             ValidarDescricao();
+            ValidarPrecoVenda();
 
         }
 
 
         public string Nome { get; set; }
         public string Descricao { get; set; }
-
-        public ICollection<ProdutoEntrada> ProdutoEntradas { get; set; }
+        public decimal PrecoVenda { get; set; }
         public ICollection<Venda> Vendas { get; set; }
 
 
@@ -56,14 +57,24 @@ namespace HortifrutiSF.Domain.Entidade
             }
         }
 
-        public void AtualizarDadosDoProduto(string nome, string descricao)
+        private void ValidarPrecoVenda()
+        {
+            if(PrecoVenda <= 0)
+            {
+                throw new Exception("O campo preço não pode ser menor ou igual aaa zero");
+            }
+        }
+
+        public void AtualizarDadosDoProduto(string nome, string descricao, decimal precoVenda)
         {
             Nome = nome;
             Descricao = descricao;
+            PrecoVenda = precoVenda;
 
             ValidarNome();
             ValidarMaximo200Caracteres();
             ValidarDescricao();
+            ValidarPrecoVenda();
 
 
         }

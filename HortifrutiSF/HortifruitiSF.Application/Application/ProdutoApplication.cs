@@ -25,7 +25,7 @@ namespace HortifruitiSF.Application.Application
             /* produtoViewModel são os dados que vem da minha camada API
              * Nesse momento estamos construindo uma entidade com os objetos que vieram da viewmodel
             */
-            var produto = new Produto(produtoVM.Nome, produtoVM.Descricao);
+            var produto = new Produto(produtoVM.Nome, produtoVM.Descricao, produtoVM.PrecoVenda);
 
             await _produtoRepository.AdicionarProduto(produto);
         }
@@ -37,7 +37,7 @@ namespace HortifruitiSF.Application.Application
 
 
             //Atribuir e atualizar na entidade
-            produto.AtualizarDadosDoProduto(produtoVM.Nome, produtoVM.Descricao);
+            produto.AtualizarDadosDoProduto(produtoVM.Nome, produtoVM.Descricao,produtoVM.PrecoVenda);
 
 
             //Chamar o repositorio e atualizar
@@ -57,6 +57,7 @@ namespace HortifruitiSF.Application.Application
             {
                 Nome = produto.Nome,
                 Descricao = produto.Descricao,
+                PrecoVenda = produto.PrecoVenda,
                 ProdutoId = produto.Id,
                 Data = produto.DataCadastro
             };
@@ -76,6 +77,7 @@ namespace HortifruitiSF.Application.Application
                 {
                     Nome = produto.Nome,
                     Descricao = produto.Descricao,
+                    PrecoVenda = produto.PrecoVenda,
                     ProdutoId = produto.Id,
                     Data = produto.DataCadastro
                 };

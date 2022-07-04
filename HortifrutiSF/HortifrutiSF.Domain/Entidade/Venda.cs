@@ -10,15 +10,11 @@ namespace HortifrutiSF.Domain.Entidade
     {
         private Venda() { }
 
-        public Venda(decimal precoProduto, int quantidadeVenda, decimal valorTotal, Guid produtoEntradaId, Guid produtoId)
+        public Venda(decimal precoProduto, int quantidadeVenda, Guid produtoId)
         {
             PrecoProduto = precoProduto;
             QuantidadeVenda = quantidadeVenda;
-            ValorTotal = valorTotal;
-            ProdutoEntradaId = produtoEntradaId;
             ProdutoId = produtoId;
-            
-
 
             ValidarPrecoProduto();
             ValidarQuantidadeVenda();
@@ -31,16 +27,14 @@ namespace HortifrutiSF.Domain.Entidade
         public decimal PrecoProduto { get; set; }
         public int QuantidadeVenda { get; set; }
         public decimal ValorTotal { get; set; }
-        public Guid ProdutoEntradaId { get; set; }
         public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
-        public ProdutoEntrada ProdutoEntrada { get; set; }
 
-       
+
 
         public void ValidarPrecoProduto()
         {
-            if(PrecoProduto <= 0)
+            if (PrecoProduto <= 0)
             {
                 throw new Exception("O campo PreçoProduto não pode ser menor ou igual a zero");
             }
@@ -49,7 +43,7 @@ namespace HortifrutiSF.Domain.Entidade
 
         public void ValidarQuantidadeVenda()
         {
-            if(QuantidadeVenda <= 0)
+            if (QuantidadeVenda <= 0)
             {
                 throw new Exception("O campo Quantidade não pode ser menor ou igual a zero ");
             }
@@ -59,12 +53,12 @@ namespace HortifrutiSF.Domain.Entidade
         public void CalcularTotalDaVenda()
         {
 
-            ValorTotal = (QuantidadeVenda * PrecoProduto);
+            ValorTotal = QuantidadeVenda * PrecoProduto;
         }
 
         public void ValidarCalculoTotalDaVenda()
         {
-            if(ValorTotal <= 0)
+            if (ValorTotal <= 0)
             {
                 throw new Exception("O Valor total não pode ser igual a zero");
             }

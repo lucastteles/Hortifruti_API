@@ -1,8 +1,3 @@
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.AssemblyInfoInputs.cache
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.AssemblyInfo.cs
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.csproj.CoreCompileInputs.cache
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\appsettings.json
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.API.exe
@@ -48,11 +43,19 @@ C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.Application.dll
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifrutiSF.Domain.dll
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifrutiSF.Repo.dll
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.Application.pdb
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifrutiSF.Repo.pdb
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifrutiSF.Domain.pdb
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.csproj.AssemblyReference.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.AssemblyInfoInputs.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.AssemblyInfo.cs
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.csproj.CoreCompileInputs.cache
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\scopedcss\bundle\HortifruitiSF.API.styles.css
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\staticwebassets\HortifruitiSF.API.StaticWebAssets.Manifest.cache
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.RazorTargetAssemblyInfo.cache
@@ -61,6 +64,3 @@ C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\ref\HortifruitiSF.API.dll
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.pdb
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.genruntimeconfig.cache
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.Application.dll
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\bin\Debug\net5.0\HortifruitiSF.Application.pdb
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifruitiSF.API\obj\Debug\net5.0\HortifruitiSF.API.MvcApplicationPartsAssemblyInfo.cs

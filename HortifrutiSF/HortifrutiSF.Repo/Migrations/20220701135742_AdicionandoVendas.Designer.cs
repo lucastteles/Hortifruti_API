@@ -4,14 +4,16 @@ using HortifrutiSF.Repo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HortifrutiSF.Repo.Migrations
 {
     [DbContext(typeof(ProdutoContext))]
-    partial class ProdutoContextModelSnapshot : ModelSnapshot
+    [Migration("20220701135742_AdicionandoVendas")]
+    partial class AdicionandoVendas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,10 +45,6 @@ namespace HortifrutiSF.Repo.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)")
                         .HasColumnName("Nome");
-
-                    b.Property<decimal>("PrecoVenda")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("PrecoVenda");
 
                     b.HasKey("Id");
 
@@ -110,7 +108,7 @@ namespace HortifrutiSF.Repo.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("Preco");
 
-                    b.Property<Guid>("ProdutoId")
+                    b.Property<Guid>("ProdutoEntradaId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("QuantidadeVenda")
@@ -123,7 +121,7 @@ namespace HortifrutiSF.Repo.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProdutoId");
+                    b.HasIndex("ProdutoEntradaId");
 
                     b.ToTable("Venda");
                 });
@@ -131,7 +129,7 @@ namespace HortifrutiSF.Repo.Migrations
             modelBuilder.Entity("HortifrutiSF.Domain.Entidade.ProdutoEntrada", b =>
                 {
                     b.HasOne("HortifrutiSF.Domain.Entidade.Produto", "Produto")
-                        .WithMany()
+                        .WithMany("ProdutoEntradas")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -141,16 +139,21 @@ namespace HortifrutiSF.Repo.Migrations
 
             modelBuilder.Entity("HortifrutiSF.Domain.Entidade.Venda", b =>
                 {
-                    b.HasOne("HortifrutiSF.Domain.Entidade.Produto", "Produto")
+                    b.HasOne("HortifrutiSF.Domain.Entidade.ProdutoEntrada", "ProdutoEntrada")
                         .WithMany("Vendas")
-                        .HasForeignKey("ProdutoId")
+                        .HasForeignKey("ProdutoEntradaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Produto");
+                    b.Navigation("ProdutoEntrada");
                 });
 
             modelBuilder.Entity("HortifrutiSF.Domain.Entidade.Produto", b =>
+                {
+                    b.Navigation("ProdutoEntradas");
+                });
+
+            modelBuilder.Entity("HortifrutiSF.Domain.Entidade.ProdutoEntrada", b =>
                 {
                     b.Navigation("Vendas");
                 });

@@ -48,6 +48,8 @@ namespace HortifruitiSF.API
             services.AddScoped<IProdutoEntradaApplication, ProdutoEntradaApplication>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IProdutoEntradaRepository,ProdutoEntradaRepository>();
+            services.AddScoped<IVendaApplication, VendaApplication>();
+            services.AddScoped<IVendaRepository, VendaRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

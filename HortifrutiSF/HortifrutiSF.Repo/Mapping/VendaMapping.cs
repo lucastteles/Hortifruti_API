@@ -36,9 +36,11 @@ namespace HortifrutiSF.Repo.Mapping
           .HasColumnName("DataAlteracao");
 
             //Relacionamento
-            builder.HasOne(pd => pd.ProdutoEntrada)
+            builder.HasOne(pd => pd.Produto)
                 .WithMany(v => v.Vendas)
-                .HasForeignKey(pd => pd.ProdutoEntradaId);
+                .HasForeignKey(pd => pd.ProdutoId);
+
+            
         }
     }
 }
