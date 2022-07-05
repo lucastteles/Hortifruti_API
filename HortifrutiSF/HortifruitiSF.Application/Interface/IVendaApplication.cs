@@ -1,4 +1,5 @@
-﻿using HortifruitiSF.Application.ViewModel;
+﻿using HortifruitiSF.Application.Dto;
+using HortifruitiSF.Application.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace HortifruitiSF.Application.Interface
     public interface IVendaApplication
     {
         Task AdicionarVenda(VendaViewModel vendaVM);
+        Task <List<VendaDto>> ObterVendaPorData(DateTime? dataInicial, DateTime? dataFinal);
+        Task DeletarVenda(Guid idVenda);
     }
 }

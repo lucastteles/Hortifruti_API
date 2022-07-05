@@ -1,5 +1,6 @@
 ﻿using HortifrutiSF.Domain.Entidade;
 using HortifrutiSF.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,21 @@ namespace HortifrutiSF.Repo.Repositories
         {
 
             await _produtoContext.Vendas.AddAsync(venda);
+            _produtoContext.SaveChanges();
+        }
+
+        public async Task<List<Venda>> ObterVendaPorData(DateTime? dataInicial, DateTime? dataFinal)
+        {
+            return await _produtoContext.Vendas
+                .Include(x => x.Produto)
+                .Where(x => x.DataCadastro.Date >= dataInicial && x.DataCadastro.Date <= dataFinal)
+                .ToListAsync();
+        }
+
+        public async Task Deletar(Guid idVenda)
+        {
+            var venda = await _produtoContext.Vendas.FirstOrDefaultAsync(x=> x.Id == idVenda);
+            _produtoContext.Vendas.Remove(venda);
             _produtoContext.SaveChanges();
         }
     }

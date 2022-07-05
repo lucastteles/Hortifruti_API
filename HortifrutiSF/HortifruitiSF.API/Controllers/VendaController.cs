@@ -32,5 +32,20 @@ namespace HortifruitiSF.API.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpGet("ObterPorData/{dataInicial}/{dataFinal}")]
+        public async Task<IActionResult> ObterPorData(DateTime dataInicial, DateTime dataFinal)
+        {
+            var resultado = await _vendaApplication.ObterVendaPorData(dataInicial, dataFinal);
+
+            return Ok(resultado);
+        }
+
+        [HttpDelete("idVenda")]
+        public async Task<IActionResult> Delete(Guid idVenda)
+        {
+            await _vendaApplication.DeletarVenda(idVenda);
+
+            return Ok();
+        }
     }
 }

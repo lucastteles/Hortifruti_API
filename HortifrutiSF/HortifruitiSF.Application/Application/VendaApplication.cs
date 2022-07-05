@@ -36,5 +36,37 @@ namespace HortifruitiSF.Application.Application
 
             await _vendaRepository.AdicionarVenda(venda);
         }
+
+
+        public async Task<List<VendaDto>> ObterVendaPorData(DateTime? dataInicial, DateTime? dataFinal)
+        {
+            var vendas = await _vendaRepository.ObterVendaPorData(dataInicial, dataFinal);
+
+            var listaVendas = new List<VendaDto>();
+
+            foreach (var venda in vendas)
+            {
+                var vendaDto = new VendaDto()
+                {
+                    VendaId = venda.Id,
+                    QuantidadeVenda = venda.QuantidadeVenda,
+                    Data = venda.DataCadastro.ToString("dd/MM/yyyy HH:mm"),
+                    ValorTotal = venda.ValorTotal,
+                    NomeProduto = venda.Produto.Nome,
+                    ProdutoId = venda.ProdutoId,
+                    
+
+                };
+
+                listaVendas.Add(vendaDto);
+            }
+            return listaVendas;
+        }
+
+
+        public async Task DeletarVenda(Guid idVenda)
+        {
+            await _vendaRepository.Deletar(idVenda);
+        }
     }
 }

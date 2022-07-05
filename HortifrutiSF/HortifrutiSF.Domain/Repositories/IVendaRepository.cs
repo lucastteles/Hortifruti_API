@@ -10,5 +10,7 @@ namespace HortifrutiSF.Domain.Repositories
     public interface IVendaRepository
     {
         Task AdicionarVenda(Venda venda);
+        Task<List<Venda>> ObterVendaPorData(DateTime? dataInicial, DateTime? dataFinal);
+        public Task Deletar(Guid idVenda);
     }
 }
