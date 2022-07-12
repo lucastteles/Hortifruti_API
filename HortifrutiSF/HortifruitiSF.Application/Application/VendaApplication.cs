@@ -15,12 +15,14 @@ namespace HortifruitiSF.Application.Application
     {
         private readonly IVendaRepository _vendaRepository;
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IEstoqueRepository _estoqueRepository;
 
 
-        public VendaApplication(IVendaRepository vendaRepository, IProdutoRepository produtoRepository)
+        public VendaApplication(IVendaRepository vendaRepository, IProdutoRepository produtoRepository, IEstoqueRepository estoqueRepository)
         {
             _vendaRepository = vendaRepository;
             _produtoRepository = produtoRepository;
+            _estoqueRepository = estoqueRepository;
         }
 
 
@@ -35,6 +37,17 @@ namespace HortifruitiSF.Application.Application
                                   vendaVM.ProdutoId);
 
             await _vendaRepository.AdicionarVenda(venda);
+
+
+            //consultar se o produto já existe no estoque 
+            var estoque = await _estoqueRepository.ObterProdutoNoEstoque(vendaVM.ProdutoId);
+             // se o produto já existe no estoque chama o atualizar (a quantidade)
+            {
+                estoque.ReduzirQunatidadeDeProdutoNoEstoque(vendaVM.QuantidadeVenda);
+
+                await _estoqueRepository.AtualizarEstoque(estoque);
+            }
+
         }
 
 

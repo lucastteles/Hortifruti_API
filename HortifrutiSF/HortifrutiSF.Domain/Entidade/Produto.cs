@@ -30,7 +30,7 @@ namespace HortifrutiSF.Domain.Entidade
         public string Descricao { get; set; }
         public decimal PrecoVenda { get; set; }
         public ICollection<Venda> Vendas { get; set; }
-
+        public ICollection<Estoque> Estoques { get; set; }
 
         //Validação
         private void ValidarNome()
@@ -78,6 +78,8 @@ namespace HortifrutiSF.Domain.Entidade
 
 
         }
+
+
 
     }
 }

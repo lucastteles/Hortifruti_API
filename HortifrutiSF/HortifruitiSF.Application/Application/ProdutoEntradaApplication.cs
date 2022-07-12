@@ -14,10 +14,12 @@ namespace HortifruitiSF.Application.Application
     public class ProdutoEntradaApplication : IProdutoEntradaApplication
     {
         private readonly IProdutoEntradaRepository _produtoEntradaRepository;
+        private readonly IEstoqueRepository _estoqueRepository;
 
-        public ProdutoEntradaApplication(IProdutoEntradaRepository produtoEntradaRepository)
+        public ProdutoEntradaApplication(IProdutoEntradaRepository produtoEntradaRepository, IEstoqueRepository estoqueRepository)
         {
             _produtoEntradaRepository = produtoEntradaRepository;
+            _estoqueRepository = estoqueRepository;
         }
 
         public async Task AdicionarProdutoEntrada(ProdutoEntradaViewModel produtoEntradaVM)
@@ -29,6 +31,32 @@ namespace HortifruitiSF.Application.Application
                                                     produtoEntradaVM.Fornecedor);
 
             await _produtoEntradaRepository.AdicionarProdutoEntradas(produtoEntrada);
+
+
+
+
+            //consultar se o produto já existe no estoque 
+            var estoque = await _estoqueRepository.ObterProdutoNoEstoque(produtoEntradaVM.ProdutoId);
+
+            if (estoque == null) //se ele não existir... Chama o adicionar estoque
+            {
+                var estoqueEntity = new Estoque(produtoEntradaVM.Quantidade,
+                                     produtoEntradaVM.ProdutoId);
+
+                await _estoqueRepository.AdicionarEstoque(estoqueEntity);
+            }
+            else     // se o produto já existe no estoque chama o atualizar (a quantidade)
+            {
+                estoque.AdicionarQuantiadeDeProdutoNoEstoque(produtoEntradaVM.Quantidade);
+
+                await _estoqueRepository.AtualizarEstoque(estoque);
+            }
+
+
+
+           // await _estoqueRepository.AdicionarEstoque(estoque);
+
+            //Adciionar no estoque  lógica
         }
 
         public async Task AtualizarProdutoEntrada(ProdutoEntradaViewModel produtoEntradaVm)
@@ -124,8 +152,25 @@ namespace HortifruitiSF.Application.Application
 
         public decimal ObterSaldoPorData(DateTime? dataInicial, DateTime? dataFinal)
         {
-            return  _produtoEntradaRepository.ObterSaldoPorData(dataInicial, dataFinal);
-            
+            return _produtoEntradaRepository.ObterSaldoPorData(dataInicial, dataFinal);
         }
+
+
+        /*
+         Entidade estoque campos Quantidade, ProdutoId, Id, datacadastro, dataalteracao
+
+        Regra: Toda vez que for adicionado um novo produto entrada (Isso ja esta implementado)
+        1 - Consultar no repositoryEstoque o estoque com o IdProduto (açucar)
+
+          Se o IdProduto ja existe na tabela Estoque
+             Vai retornar Estoque com o IdProduto e vou atualizar a quantidade.
+
+          Se o IdProduto não existe na tabela estoque
+             Preciso fazer um insert da entidade Estoque
+
+
+         */
+
+
     }
 }

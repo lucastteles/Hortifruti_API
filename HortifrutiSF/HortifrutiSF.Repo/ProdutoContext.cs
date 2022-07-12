@@ -19,6 +19,7 @@ namespace HortifrutiSF.Repo
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<ProdutoEntrada> ProdutoEntradas { get; set; }
         public DbSet<Venda> Vendas { get; set; }
+        public DbSet<Estoque> Estoques { get; set;}
         
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

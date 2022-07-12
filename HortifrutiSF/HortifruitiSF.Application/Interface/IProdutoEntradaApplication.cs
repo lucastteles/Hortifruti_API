@@ -1,5 +1,6 @@
 ﻿using HortifruitiSF.Application.Dto;
 using HortifruitiSF.Application.ViewModel;
+using HortifrutiSF.Domain.Entidade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
