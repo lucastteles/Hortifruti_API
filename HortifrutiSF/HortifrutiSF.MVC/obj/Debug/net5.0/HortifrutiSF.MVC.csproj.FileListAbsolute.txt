@@ -158,3 +158,4 @@ C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.M
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\ProdutoEntrada\Edit.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\ProdutoEntrada\Delete.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\ProdutoEntrada\Create.cshtml.g.cs
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Estoque\Index.cshtml.g.cs
