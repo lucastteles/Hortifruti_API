@@ -8,7 +8,7 @@ namespace HortifruitiSF.Application.ViewModel
 {
     public class ProdutoViewModel
     {
-        public Guid IdProduto { get; set; }
+        public Guid ProdutoId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal PrecoVenda { get; set; }

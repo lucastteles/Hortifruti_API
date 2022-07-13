@@ -1,0 +1,39 @@
+﻿@model HortifruitiSF.Application.Dto.ProdutoDto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletar Produto</h1>
+
+<h3>Você tem certeza que deseja deletar este produto ?</h3>
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+          Nome
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+         Preço Venda
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PrecoVenda)
+        </dd>
+        <dt class = "col-sm-2">
+          Descrição
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>       
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ProdutoId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

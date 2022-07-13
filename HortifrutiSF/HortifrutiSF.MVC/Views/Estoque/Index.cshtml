@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HortifruitiSF.Application.Dto.EstoqueDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Estoque</h1>
+
+<p>
+    <a asp-action="Create">Registrar Entrada De Produtos</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+             <th>
+               Produto
+            </th>
+             <th>
+               Preço
+            </th>
+            <th>
+               Quantidade
+            </th>            
+            <th>
+               Peso
+            </th>
+            <th>
+               Fornecedor
+            </th>
+
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>           
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>  
+            <td>
+                @Html.DisplayFor(modelItem => item.Fornecedor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdProdutoEntrada">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdProdutoEntrada">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdProdutoEntrada">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

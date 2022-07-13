@@ -33,7 +33,7 @@ namespace HortifruitiSF.Application.Application
         public async Task AtualizarProduto(ProdutoViewModel produtoVM)//////
         {
             // Obter o produtoId fazer a consulta no repositorio
-            var produto = await _produtoRepository.ObterProdutoPorId(produtoVM.IdProduto);
+            var produto = await _produtoRepository.ObterProdutoPorId(produtoVM.ProdutoId);
 
 
             //Atribuir e atualizar na entidade
