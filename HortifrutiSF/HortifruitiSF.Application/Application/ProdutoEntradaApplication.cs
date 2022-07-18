@@ -54,7 +54,7 @@ namespace HortifruitiSF.Application.Application
 
 
 
-           // await _estoqueRepository.AdicionarEstoque(estoque);
+            // await _estoqueRepository.AdicionarEstoque(estoque);
 
             //Adciionar no estoque  lógica
         }
@@ -64,6 +64,11 @@ namespace HortifruitiSF.Application.Application
             // Obter o produtoId fazer a consulta no repositorio
             var produtoEntradas = await _produtoEntradaRepository.ObterProdutoEntradasPorId(produtoEntradaVm.Id);
 
+
+            var estoque = await _estoqueRepository.ObterProdutoNoEstoque(produtoEntradaVm.ProdutoId);
+
+            estoque.AtualizarQuantidadeDeProdutoNoEstoque(produtoEntradas.Quantidade, produtoEntradaVm.Quantidade);
+
             //Atribuir e atualizar na entidade
             produtoEntradas.AtualizarDadosDoProdutoEntrada(produtoEntradaVm.Preco,
                                                            produtoEntradaVm.Quantidade,
@@ -72,6 +77,8 @@ namespace HortifruitiSF.Application.Application
                                                            produtoEntradaVm.Fornecedor);
 
 
+
+            await _estoqueRepository.AtualizarEstoque(estoque);
 
             await _produtoEntradaRepository.AtualizarProdutoEntradas(produtoEntradas);
         }

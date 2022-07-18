@@ -54,6 +54,8 @@ namespace HortifrutiSF.MVC.Controllers
         public async Task <IActionResult> Create(ProdutoEntradaViewModel produtoEntradaVM)
         {
             await _produtoEntradaApplication.AdicionarProdutoEntrada(produtoEntradaVM);
+            ViewBag.Mensagem = "Produto adicionado com sucesso";
+            ViewBag.Mensagem2 = "Alerta";
 
             return View(produtoEntradaVM);
         }

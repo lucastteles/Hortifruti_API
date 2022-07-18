@@ -37,7 +37,7 @@ namespace HortifrutiSF.MVC.Controllers
         // GET: ProdutoCadastroController/Create
         public async Task <IActionResult> Create()
         {
-             
+            ViewBag.Mensagem = null;
 
             return View();
         }
@@ -48,8 +48,11 @@ namespace HortifrutiSF.MVC.Controllers
         public async Task <IActionResult> Create(ProdutoViewModel produtoViewModel)
         {
             await _produtoApplication.AdicionarProduto(produtoViewModel);
+            ViewBag.Mensagem = $"Produto {produtoViewModel.Nome} adicionado com sucesso as {DateTime.Now}";
 
-            return View(produtoViewModel);
+            ModelState.Clear();
+
+            return View();
         }
 
         // GET: ProdutoCadastroController/Edit/5
@@ -67,8 +70,11 @@ namespace HortifrutiSF.MVC.Controllers
         public async Task<IActionResult> Edit(ProdutoViewModel produtoVM)
         {
             await _produtoApplication.AtualizarProduto(produtoVM);
+            
+          
 
             return RedirectToAction(nameof(Index));
+           
         }
 
         // GET: ProdutoCadastroController/Delete/5

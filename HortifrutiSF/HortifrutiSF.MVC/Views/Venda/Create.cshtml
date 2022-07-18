@@ -26,6 +26,17 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            @if (ViewBag.Mensagem != null)
+            {
+                <div class="alert alert-success" role="alert" @ViewBag.Mensagem2;>
+                    <h4 class="alert-heading">Muito bem!</h4>
+                    <p>Venda Realizada com Sucesso !</p>
+                    <hr>
+                    <p class="mb-0"></p>
+                    
+
+                </div>
+            }
         </form>
     </div>
 </div>

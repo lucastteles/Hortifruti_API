@@ -19,10 +19,10 @@ namespace HortifrutiSF.Domain.Entidade
         }
 
 
-       // Entidade estoque campos Quantidade, ProdutoId, Id, datacadastro, dataalteracao
+        // Entidade estoque campos Quantidade, ProdutoId, Id, datacadastro, dataalteracao
 
         public int QuantidadeEstoque { get; set; }
-        public Guid ProdutoId   { get; set; }
+        public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
 
 
@@ -30,7 +30,7 @@ namespace HortifrutiSF.Domain.Entidade
 
         public void ValidarQuantidadeEstoque()
         {
-            if(QuantidadeEstoque <= 0)
+            if (QuantidadeEstoque <= 0)
             {
                 throw new Exception("O campo QuantidadeEstoque não pode ser menor ou igual a zero");
             }
@@ -46,9 +46,28 @@ namespace HortifrutiSF.Domain.Entidade
         {
             QuantidadeEstoque -= quantidade;
         }
+
+        public void AtualizarQuantidadeDeProdutoNoEstoque(int quantidadeAtual, int quantidadeNova)
+        {
+            if (quantidadeAtual != quantidadeNova)
+            {
+                if (quantidadeNova > quantidadeAtual)
+                {
+                    var quantidade = quantidadeNova - quantidadeAtual;
+
+                    AdicionarQuantiadeDeProdutoNoEstoque(quantidade);
+                }
+                else
+                {
+                    var quantidade = quantidadeAtual - quantidadeNova;
+
+                    ReduzirQunatidadeDeProdutoNoEstoque(quantidade);
+                }
+            }
+        }
     }
 
-    
+
 
 
 }

@@ -13,12 +13,12 @@ namespace HortifrutiSF.MVC.Controllers
     public class VendaController : Controller
     {
         private readonly IVendaApplication _vendaApplication;
-        private readonly IProdutoApplication _produtoApplication;
+        private readonly IEstoqueApplication _estoqueApplication;
 
-        public VendaController(IVendaApplication vendaApplication, IProdutoApplication produtoApplication)
+        public VendaController(IVendaApplication vendaApplication, IEstoqueApplication estoqueApplication)
         {
             _vendaApplication = vendaApplication;
-            _produtoApplication = produtoApplication;
+            _estoqueApplication = estoqueApplication;
         }
 
 
@@ -48,7 +48,7 @@ namespace HortifrutiSF.MVC.Controllers
         // GET: VendaController/Create
         public async Task <IActionResult> Create()
         {
-            var produtos = await _produtoApplication.ObterProdutosApplication();
+            var produtos = await _estoqueApplication.ObterTodosProdutosNoEstoque();
 
             ViewBag.produtos = produtos.Select(c => new SelectListItem()
             { Text = c.Nome, Value = c.ProdutoId.ToString() })
@@ -63,6 +63,10 @@ namespace HortifrutiSF.MVC.Controllers
         public async Task <IActionResult> Create(VendaViewModel VendaVM)
         {
             await _vendaApplication.AdicionarVenda(VendaVM);
+            ViewBag.Mensagem = "Venda Realizada  com sucesso";
+            ViewBag.Mensagem2 = "Alerta";
+
+            ModelState.Clear();
 
             return View(VendaVM);
         }
@@ -84,11 +88,11 @@ namespace HortifrutiSF.MVC.Controllers
         }
 
         // GET: VendaController/Delete/5
-        public async Task <IActionResult> Delete(DateTime? dataInicial, DateTime? dataFinal)
+        public async Task <IActionResult> Delete()
         {
-            var estoque = await _vendaApplication.ObterVendaPorData(dataInicial, dataFinal);
+           
 
-            return View(estoque);
+            return View();
            
         }
 

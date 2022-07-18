@@ -49,6 +49,11 @@ namespace HortifrutiSF.Repo.Repositories
                                         .FirstOrDefaultAsync(x => x.Id == idEstoque);
         }
 
+        public async Task<List<Estoque>> ObterTodosProdutosNoEstoque()
+        {
+            return await _produtoContext.Estoques.Include(x => x.Produto).ToListAsync();
+        }
+
 
     }
 }

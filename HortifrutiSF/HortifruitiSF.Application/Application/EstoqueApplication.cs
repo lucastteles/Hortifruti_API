@@ -18,24 +18,6 @@ namespace HortifruitiSF.Application.Application
             _estoqueRepository = estoqueRepository;
         }
 
-        //public async Task<EstoqueDto> ObterEstoque(Guid idProduto)
-        //{
-        //    var estoque = await _estoqueRepository.ObterProdutoNoEstoque(idProduto);
-
-
-        //    var estoqueDto = new EstoqueDto()
-        //    {
-        //        QuantidadeEstoque = estoque.QuantidadeEstoque,
-        //        NomeProduto = estoque.Produto.Nome,
-        //        ProdutoId = estoque.ProdutoId,
-        //        EstoqueId = estoque.Id,
-
-        //    };
-
-
-        //    return estoqueDto;
-        //}
-
         public async Task<List<EstoqueDto>> ObterEstoqueApplication()
         {
             var estoques = await _estoqueRepository.ObterEstoque();//Todos
@@ -73,6 +55,29 @@ namespace HortifruitiSF.Application.Application
             };
 
             return estoqueDto;
+        }
+
+        public async Task<List<ProdutoDto>> ObterTodosProdutosNoEstoque()
+        {
+            var estoques = await _estoqueRepository.ObterTodosProdutosNoEstoque();
+
+            var listaProdutos = new List<ProdutoDto>();
+
+            foreach (var estoque in estoques)
+            {
+                var produtoDto = new ProdutoDto()
+                {
+                    Nome = estoque.Produto.Nome,
+                    Descricao = estoque.Produto.Descricao,
+                    PrecoVenda = estoque.Produto.PrecoVenda,
+                    ProdutoId = estoque.Produto.Id,
+                    Data = estoque.Produto.DataCadastro
+                };
+
+                listaProdutos.Add(produtoDto);
+            }
+
+            return listaProdutos;
         }
     }
 }

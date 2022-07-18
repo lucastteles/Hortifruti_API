@@ -11,9 +11,11 @@ namespace HortifrutiSF.Domain.Repositories
     {
         Task AdicionarEstoque(Estoque estoque);
         Task AtualizarEstoque(Estoque estoque);
-        Task<List<Estoque>> ObterEstoque();//TodoEstoque
+        Task<List<Estoque>> ObterEstoque();
         Task<Estoque> ObterProdutoNoEstoque(Guid idProduto);
         Task<Estoque> ObterEstoquePorId(Guid idEstoque);
-        
+        Task<List<Estoque>> ObterTodosProdutosNoEstoque();
+
+
     }
 }
