@@ -10,5 +10,6 @@ namespace HortifruitiSF.Application.ViewModel
     {
         public int QuantidadeVenda { get; set; }
         public Guid ProdutoId { get; set; }
+        
     }
 }

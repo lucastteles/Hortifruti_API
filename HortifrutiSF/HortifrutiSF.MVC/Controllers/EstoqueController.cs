@@ -39,17 +39,7 @@ namespace HortifrutiSF.MVC.Controllers
             return View(estoque);
         }
 
-        // GET: EstoqueController/Create
-        public async Task  <IActionResult> Create()
-        {
-            var produtoEntradas = await _produtoEntradaApplication.ObterProdutoEntradasApplication();
-
-            ViewBag.produtoEntradas = produtoEntradas.Select(c => new SelectListItem()
-            { Text = c.NomeProduto, Value = c.IdProdutoEntrada.ToString() })
-                .ToList();
-
-            return View();
-        }
+       
 
        
         

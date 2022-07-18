@@ -35,6 +35,7 @@ namespace HortifruitiSF.Application.Application
             var venda = new Venda(produto.PrecoVenda,
                                   vendaVM.QuantidadeVenda,
                                   vendaVM.ProdutoId);
+                                
 
             await _vendaRepository.AdicionarVenda(venda);
 

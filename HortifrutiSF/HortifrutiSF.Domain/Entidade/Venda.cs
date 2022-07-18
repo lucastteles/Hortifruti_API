@@ -16,6 +16,7 @@ namespace HortifrutiSF.Domain.Entidade
             QuantidadeVenda = quantidadeVenda;
             ProdutoId = produtoId;
 
+
             ValidarPrecoProduto();
             ValidarQuantidadeVenda();
             CalcularTotalDaVenda();
