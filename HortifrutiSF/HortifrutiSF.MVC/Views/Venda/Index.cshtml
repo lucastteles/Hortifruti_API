@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HortifruitiSF.Application.Dto.VendaDto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Vendas";
 }
 
 <div class="row">
@@ -31,7 +31,7 @@
     </div>
 </div>
 
-<h1>Venda</h1>
+<h1>Realizar Venda</h1>
 
 <p>
     <a asp-action="Create">Venda</a>
@@ -65,9 +65,9 @@
                 @Html.DisplayFor(modelItem => item.ValorTotal)
             </td> 
             <td>
-                <a asp-action="Edit" asp-route-id="@item.VendaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.VendaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.VendaId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.VendaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.VendaId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.VendaId">Deletar</a>
              
             </td>
         </tr>

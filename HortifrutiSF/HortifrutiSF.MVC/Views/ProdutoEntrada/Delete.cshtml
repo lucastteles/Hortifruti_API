@@ -1,7 +1,7 @@
 ﻿@model HortifruitiSF.Application.Dto.ProdutoEntradaDto
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Deletar";
 }
 
 <h1>Deletar Entrada de Produto</h1>
@@ -47,6 +47,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdProdutoEntrada" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index">Voltar</a>
     </form>
 </div>

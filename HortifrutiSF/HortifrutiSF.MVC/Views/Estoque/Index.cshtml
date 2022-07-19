@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HortifruitiSF.Application.Dto.EstoqueDto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Estoque";
 }
 
 <h1>Estoque</h1>
@@ -28,7 +28,7 @@
                 @Html.DisplayFor(modelItem => item.NomeProduto)
             </td>                     
             <td>               
-                <a asp-action="Details" asp-route-id="@item.EstoqueId">Details</a>            
+                <a asp-action="Details" asp-route-id="@item.EstoqueId">Detalhes</a>            
             </td>
         </tr>
 }

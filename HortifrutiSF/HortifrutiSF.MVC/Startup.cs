@@ -6,6 +6,7 @@ using HortifrutiSF.Repo.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -36,6 +37,22 @@ namespace HortifrutiSF.MVC
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<ProdutoContext>()
+                .AddDefaultTokenProviders();
+
+            //Remove padrão de senha do Identity
+            services.Configure<IdentityOptions>(options =>
+                    {
+                        options.Password.RequireDigit = false; //Obriga a ter um numero na senha
+                                                               //options.Password.RequiredLength = 7; // valor default 8 digitos
+                        options.Password.RequiredUniqueChars = 6; // minimos caracteres unicos
+                        options.Password.RequireLowercase = false; // não é obrigatório começar com minusculo
+                        options.Password.RequireNonAlphanumeric = false; // não é obrigatório alfanumerico
+                        options.Password.RequireUppercase = false; // não é obrigatorio começar com maiusculo
+                    });
+
+
             services.AddScoped<IProdutoApplication, ProdutoApplication>();
             services.AddScoped<IProdutoEntradaApplication, ProdutoEntradaApplication>();
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
@@ -43,7 +60,7 @@ namespace HortifrutiSF.MVC
             services.AddScoped<IVendaApplication, VendaApplication>();
             services.AddScoped<IVendaRepository, VendaRepository>();
             services.AddScoped<IEstoqueApplication, EstoqueApplication>();
-            services.AddScoped <IEstoqueRepository, EstoqueRepository>();
+            services.AddScoped<IEstoqueRepository, EstoqueRepository>();
         }
 
 
@@ -65,6 +82,7 @@ namespace HortifrutiSF.MVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

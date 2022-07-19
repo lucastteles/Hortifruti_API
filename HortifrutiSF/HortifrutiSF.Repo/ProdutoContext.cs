@@ -1,10 +1,12 @@
 ﻿using HortifrutiSF.Domain.Entidade;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace HortifrutiSF.Repo
 {
-    public class ProdutoContext : DbContext
+    public class ProdutoContext : IdentityDbContext<IdentityUser>
     {
         public ProdutoContext(DbContextOptions<ProdutoContext> options) : base(options)
         {

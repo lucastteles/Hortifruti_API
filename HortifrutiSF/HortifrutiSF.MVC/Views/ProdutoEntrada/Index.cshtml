@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<HortifruitiSF.Application.Dto.ProdutoEntradaDto>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Entrada de produtos";
 }
 
-<h1>Produto Entrada</h1>
+<h1>Entrada de Produtos</h1>
 
 <p>
     <a asp-action="Create">Registrar Entrada De Produtos</a>
@@ -51,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.Fornecedor)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdProdutoEntrada">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdProdutoEntrada">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdProdutoEntrada">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdProdutoEntrada">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.IdProdutoEntrada">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdProdutoEntrada">Deletar</a>
             </td>
         </tr>
 }
