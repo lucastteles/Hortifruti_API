@@ -22,12 +22,21 @@ namespace HortifrutiSF.Repo
         public DbSet<ProdutoEntrada> ProdutoEntradas { get; set; }
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Estoque> Estoques { get; set;}
-        
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProdutoContext).Assembly);
+            base.OnModelCreating(modelBuilder);
         }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating.ApplyConfigurationsFromAssembly(typeof(ProdutoContext).Assembly);
+        //}
+
+
+
+
 
 
     }
