@@ -29,6 +29,10 @@ namespace HortifrutiSF.Repo.Mapping
             .HasColumnName("ValorTotal")
             .IsRequired();
 
+            builder.Property(x => x.PrecoCusto)
+            .HasColumnName("PrecoCusto")
+            .IsRequired();
+
             builder.Property(x => x.DataAlteracao)
           .HasColumnName("DataCadastro");
 

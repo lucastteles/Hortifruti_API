@@ -44,15 +44,23 @@ namespace HortifrutiSF.Repo.Repositories
             return await _produtoContext.ProdutoEntradas
                 .Include(x => x.Produto)
                 .Where(x => x.DataCadastro.Date >= dataInicial && x.DataCadastro.Date <= dataFinal)
+                .OrderByDescending(x=>x.DataCadastro)
                 .ToListAsync();
         }
 
-        public async Task<ProdutoEntrada> ObterProdutoEntradasPorId(Guid idProdutoEntrada)
+        public async Task<ProdutoEntrada> ObterProdutoEntradasPorId(Guid idProdutoId)
         {
             return await _produtoContext.ProdutoEntradas
                                         .Include(x => x.Produto)
-                                        .FirstOrDefaultAsync(x => x.Id == idProdutoEntrada);
+                                        .FirstOrDefaultAsync(x => x.Id == idProdutoId);
 
+        }
+
+        public async Task<ProdutoEntrada> ObterProdutoEntradasPorProdutoId(Guid idProduto)
+        {
+            return await _produtoContext.ProdutoEntradas
+                                        .Include(x => x.Produto)
+                                        .FirstOrDefaultAsync(x => x.ProdutoId == idProduto);
         }
 
         public decimal ObterSaldoPorData(DateTime? dataInicial, DateTime? dataFinal)

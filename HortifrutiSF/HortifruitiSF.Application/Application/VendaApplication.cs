@@ -15,14 +15,17 @@ namespace HortifruitiSF.Application.Application
     {
         private readonly IVendaRepository _vendaRepository;
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoEntradaRepository _produtoEntradaRepository;
         private readonly IEstoqueRepository _estoqueRepository;
 
 
-        public VendaApplication(IVendaRepository vendaRepository, IProdutoRepository produtoRepository, IEstoqueRepository estoqueRepository)
+        public VendaApplication(IVendaRepository vendaRepository, IProdutoRepository produtoRepository,
+                                IEstoqueRepository estoqueRepository, IProdutoEntradaRepository produtoEntradaRepository)
         {
             _vendaRepository = vendaRepository;
             _produtoRepository = produtoRepository;
             _estoqueRepository = estoqueRepository;
+            _produtoEntradaRepository = produtoEntradaRepository;
         }
 
 
@@ -31,8 +34,11 @@ namespace HortifruitiSF.Application.Application
 
             var produto = await _produtoRepository.ObterProdutoPorId(vendaVM.ProdutoId);
 
+            var produtoEntrada = await _produtoEntradaRepository.ObterProdutoEntradasPorProdutoId(vendaVM.ProdutoId);
+
 
             var venda = new Venda(produto.PrecoVenda,
+                                  produtoEntrada.PrecoCusto,
                                   vendaVM.QuantidadeVenda,
                                   vendaVM.ProdutoId);
                                 

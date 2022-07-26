@@ -104,6 +104,7 @@ namespace HortifruitiSF.Application.Application
                     ProdutoId = produtoEntrada.ProdutoId,
                     Data = produtoEntrada.DataCadastro.ToString("dd/MM/yyyy HH:mm"),
                     Fornecedor = produtoEntrada.Fornecedor,
+                    PrecoCusto = produtoEntrada.PrecoCusto,
                     NomeProduto = produtoEntrada.Produto.Nome,
                     IdProdutoEntrada = produtoEntrada.Id
                 };
@@ -125,6 +126,7 @@ namespace HortifruitiSF.Application.Application
                 ProdutoId = produtoEntrada.ProdutoId,
                 Data = produtoEntrada.DataCadastro.ToString("dd/MM/yyyy HH:mm"),
                 Fornecedor = produtoEntrada.Fornecedor,
+                PrecoCusto = produtoEntrada.PrecoCusto,
                 NomeProduto = produtoEntrada.Produto.Nome,
                 IdProdutoEntrada = produtoEntrada.Id
             };
@@ -148,6 +150,7 @@ namespace HortifruitiSF.Application.Application
                     ProdutoId = produtoEntrada.ProdutoId,
                     Data = produtoEntrada.DataCadastro.ToString("dd/MM/yyyy HH:mm"),
                     Fornecedor = produtoEntrada.Fornecedor,
+                    PrecoCusto = produtoEntrada.PrecoCusto,
                     NomeProduto = produtoEntrada.Produto.Nome,
                     IdProdutoEntrada = produtoEntrada.Id
                 };

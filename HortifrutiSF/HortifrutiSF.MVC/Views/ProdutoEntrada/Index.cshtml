@@ -12,50 +12,64 @@
 <table class="table">
     <thead>
         <tr>
-             <th>
-               Produto
-            </th>
-             <th>
-               Preço
+            <th>
+                Produto
             </th>
             <th>
-               Quantidade
-            </th>            
-            <th>
-               Peso
+                Preço
             </th>
             <th>
-               Fornecedor
+                Quantidade
+            </th>
+            <th>
+                Peso
+            </th>
+            <th>
+                Fornecedor
+            </th>
+            <th>
+                Preço de Custo
             </th>
 
-           
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-             <td>
-                @Html.DisplayFor(modelItem => item.NomeProduto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Preco)
-            </td>           
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Peso)
-            </td>  
-            <td>
-                @Html.DisplayFor(modelItem => item.Fornecedor)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdProdutoEntrada">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.IdProdutoEntrada">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdProdutoEntrada">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Peso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fornecedor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecoCusto)
+                </td>
+                <td>
+
+
+                    <a class="btn btn-outline-secondary" id="IdProdutoEntrada" asp-controller="ProdutoEntrada"
+                   asp-action="Edit" asp-route-id="@item.IdProdutoEntrada">Editar</a>
+
+                    <a class="btn btn-outline-info" id="IdProdutoEntrada" asp-controller="ProdutoEntrada"
+                   asp-action="Details" asp-route-id="@item.IdProdutoEntrada">Detalhes</a>
+
+                    <a class="btn btn-outline-danger" id="produtoId" asp-controller="ProdutoEntrada"
+                   asp-action="Delete" asp-route-id="@item.IdProdutoEntrada">Deletar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

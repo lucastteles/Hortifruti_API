@@ -12,5 +12,6 @@ namespace HortifrutiSF.Domain.Repositories
         Task AdicionarVenda(Venda venda);
         Task<List<Venda>> ObterVendaPorData(DateTime? dataInicial, DateTime? dataFinal);
         public Task Deletar(Guid idVenda);
+        Task<List<Venda>> ObterTodaVendaPorProduto(Guid idProduto, DateTime? data);
     }
 }

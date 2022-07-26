@@ -16,5 +16,6 @@ namespace HortifrutiSF.Domain.Repositories
         public Task DeletarProdutoEntrada(Guid idProdutoEntrada);
         Task<List<ProdutoEntrada>> ObterProdutoEntradaPorData(DateTime? dataInicial, DateTime? dataFinal);
         decimal ObterSaldoPorData( DateTime? dataInicial, DateTime? dataFinal);
+        Task<ProdutoEntrada> ObterProdutoEntradasPorProdutoId(Guid idProduto);
     }
 }

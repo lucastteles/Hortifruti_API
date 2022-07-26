@@ -10,26 +10,31 @@ namespace HortifrutiSF.Domain.Entidade
     {
         private Venda() { }
 
-        public Venda(decimal precoProduto, int quantidadeVenda, Guid produtoId)
+        public Venda(decimal precoProduto, decimal precoCusto, int quantidadeVenda, Guid produtoId)
         {
             PrecoProduto = precoProduto;
             QuantidadeVenda = quantidadeVenda;
             ProdutoId = produtoId;
+            PrecoCusto = precoCusto;
 
 
             ValidarPrecoProduto();
             ValidarQuantidadeVenda();
             CalcularTotalDaVenda();
             ValidarCalculoTotalDaVenda();
+            CalcularTotalPrecoCusto(precoCusto, quantidadeVenda);
         }
 
 
 
         public decimal PrecoProduto { get; set; }
+        public decimal PrecoCusto { get; set; }
         public int QuantidadeVenda { get; set; }
         public decimal ValorTotal { get; set; }
         public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
+
+
 
 
 
@@ -57,6 +62,11 @@ namespace HortifrutiSF.Domain.Entidade
             ValorTotal = QuantidadeVenda * PrecoProduto;
         }
 
+        private void CalcularTotalPrecoCusto(decimal precoCusto, int quantidadeVenda)
+        {
+            PrecoCusto = precoCusto * quantidadeVenda;
+        }
+
         public void ValidarCalculoTotalDaVenda()
         {
             if (ValorTotal <= 0)
@@ -64,52 +74,9 @@ namespace HortifrutiSF.Domain.Entidade
                 throw new Exception("O Valor total não pode ser igual a zero");
             }
         }
-        /*
-         Entidade Venda
-
-        Guid ProdutoId
-        Guid ProdutoEntradaId
-        decimal PrecoProduto
-        int QuantidadeVenda
-        decimal ValorTotal
 
 
-        produto = refri
-        preço = 10.00
-        quantidade = 2
-        valortotal = 20
-        datacadastro = 30/06/2022 9:40
 
-        produto = refri
- 
-        preço = 10.00
-        quantidadeDeVenda = 2
-        valortotal = 20
-        datacadastro = 30/06/2022 10:40
-
-        produto = refri
-        preço = 20.00
-        quantidade = 1
-        valortotal = 20
-        datacadastro = 30/06/2022 11:00
-
-        produto = refri
-        preço = 10.00
-        quantidade = 4
-        valortotal = 40
-        datacadastro = 30/06/2022 12:00
-
-        a query 
-        pegar o produto refrigerante de uma data especifica, 
-        somar a quantidade vendida 
-        e somar o valor total
-
-        DTO CalculoDeVenda
-        produto = refri
-        quantidade = 4
-        valortotal = 100
-         
-         */
 
     }
 }

@@ -1,0 +1,97 @@
+﻿@model HortifruitiSF.Application.Dto.LucroDto
+
+
+
+@{
+    ViewData["Title"] = "Lucro";
+}
+
+<h1>Lucros</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal">
+            <fieldset>
+                <legend><b>Lucros por Período</b></legend>
+                <div class="form-group">
+                    <label for="data" class="col-lg-6 control-label">Data</label>
+                    <div class="col-lg-10">
+                        <input type="date" name="data" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Filtrar Lucro</label>
+                    <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.produto"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Buscar" class="btn btn-primary" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+@*<form>
+
+    <div class="form-group">
+        <label class="control-label">Filtrar Lucro</label>
+        <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.produto"></select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Buscar" class="btn btn-primary" />
+    </div>
+
+</form>@**@
+
+@if (ViewBag.Mensagem != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">OPS!</h4>
+        <p>@ViewBag.Mensagem</p>
+        <hr>
+        <p class="mb-0"></p>
+
+
+    </div>
+}
+else
+{
+
+    <div>
+        <h4>Resultado do Lucro</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Nome do Produto
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NomeProduto)
+            </dd>
+            <dt class="col-sm-2">
+                Quantidade Vendida
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.QuantidadeVenda)
+            </dd>
+            <dt class="col-sm-2">
+                Preço de Custo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PrecoCusto)
+            </dd>
+            <dt class="col-sm-2">
+                Lucro
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Lucro)
+            </dd>
+            <dt class="col-sm-2">
+                Valor Total
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ValorTotal)
+            </dd>
+        </dl>
+    </div>
+}
+

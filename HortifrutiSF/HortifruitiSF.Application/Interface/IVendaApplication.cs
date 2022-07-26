@@ -13,5 +13,7 @@ namespace HortifruitiSF.Application.Interface
         Task AdicionarVenda(VendaViewModel vendaVM);
         Task <List<VendaDto>> ObterVendaPorData(DateTime? dataInicial, DateTime? dataFinal);
         Task DeletarVenda(Guid idVenda);
+
+
     }
 }

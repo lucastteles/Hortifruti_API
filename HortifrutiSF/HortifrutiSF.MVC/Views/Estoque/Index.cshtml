@@ -9,28 +9,31 @@
 <table class="table">
     <thead>
         <tr>
-             <th>
-               Quantidade Em Estoque
+            <th>
+                Quantidade Em Estoque
             </th>
-             <th>
-              Produto 
-            </th>                
+            <th>
+                Produto
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-             <td>
-                @Html.DisplayFor(modelItem => item.QuantidadeEstoque)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeProduto)
-            </td>                     
-            <td>               
-                <a asp-action="Details" asp-route-id="@item.EstoqueId">Detalhes</a>            
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeEstoque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" id="estoqueId" asp-controller="Estoque"
+                   asp-action="Details" asp-route-id="@item.EstoqueId">Detalhes</a>
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

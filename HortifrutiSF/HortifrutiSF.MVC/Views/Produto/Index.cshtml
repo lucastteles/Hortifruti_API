@@ -12,39 +12,50 @@
 <table class="table">
     <thead>
         <tr>
-             <th>
-               Produto
+            <th>
+                Produto
             </th>
             <th>
-               Preço Venda
-            </th>            
+                Preço Venda
+            </th>
             <th>
-               Descrição
+                Descrição
             </th>
 
-           
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>           
-            <td>
-                @Html.DisplayFor(modelItem => item.PrecoVenda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>           
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ProdutoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecoVenda)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    <a class="btn btn-outline-secondary" id="produtoId" asp-controller="Produto"
+                   asp-action="Edit" asp-route-id="@item.ProdutoId">Editar</a> 
+                   
+                    <a class="btn btn-outline-info" id="produtoId" asp-controller="Produto"
+                   asp-action="Details" asp-route-id="@item.ProdutoId">Detalhes</a> 
+
+                   <a class="btn btn-outline-danger" id="produtoId" asp-controller="Produto"
+                   asp-action="Delete" asp-route-id="@item.ProdutoId">Deletar</a>
+                    
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
+

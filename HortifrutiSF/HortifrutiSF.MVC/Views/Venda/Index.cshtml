@@ -4,6 +4,12 @@
     ViewData["Title"] = "Vendas";
 }
 
+<h1>Realizar Venda</h1>
+
+<p>
+    <h5><a asp-action="Create">Venda</a></h5>
+</p>
+
 <div class="row">
     <div class="col-md-6">
             <form class="form-horizontal">
@@ -31,11 +37,7 @@
     </div>
 </div>
 
-<h1>Realizar Venda</h1>
 
-<p>
-    <a asp-action="Create">Venda</a>
-</p>
 
 <table class="table">
     <thead>
@@ -64,10 +66,9 @@
              <td>
                 @Html.DisplayFor(modelItem => item.ValorTotal)
             </td> 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.VendaId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.VendaId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.VendaId">Deletar</a>
+            <td>                 
+                <a class="btn btn-outline-danger" id="VendaId" asp-controller="Venda"
+                   asp-action="Delete" asp-route-id="@item.VendaId">Deletar</a>
              
             </td>
         </tr>

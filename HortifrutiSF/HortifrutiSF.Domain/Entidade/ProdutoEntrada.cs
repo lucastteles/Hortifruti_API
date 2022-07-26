@@ -12,19 +12,23 @@ namespace HortifrutiSF.Domain.Entidade
 
         private ProdutoEntrada() { }
 
-        public ProdutoEntrada(decimal preco, int quantidade, float peso, Guid produtoId, string fornecedor)
+        public ProdutoEntrada(decimal preco, int quantidade, float peso, Guid produtoId, string fornecedor )
         {
             Preco = preco; //obtenho o valor total de produto // Quanto eu gastei de mercadoria
             Quantidade = quantidade;
             Peso = peso;
             Fornecedor = fornecedor;
             ProdutoId = produtoId;
+            
 
 
             ValidarPreco();
             ValidarQuantidade();
             ValidarPeso();
             ValidarFornecedor();
+            CalcularPrecoCusto();
+            ValidarCalculoPrecoCusto();
+
         }
 
 
@@ -32,6 +36,7 @@ namespace HortifrutiSF.Domain.Entidade
         public int Quantidade { get; set; }
         public float Peso { get; set; }
         public string Fornecedor { get; set; }
+        public decimal PrecoCusto { get; set; }
         public Guid ProdutoId { get; set; }
         public Produto Produto { get; set; }
         
@@ -72,6 +77,20 @@ namespace HortifrutiSF.Domain.Entidade
             if (Fornecedor.Length > 200)
             {
                 throw new Exception("O campo Fornecedor não pode ser maior que 200 caracteres");
+            }
+        }
+
+        public void CalcularPrecoCusto()
+        {
+
+            PrecoCusto = Preco / Quantidade;
+        }
+
+        public void ValidarCalculoPrecoCusto()
+        {
+            if (PrecoCusto <= 0)
+            {
+                throw new Exception("O Preço de Custo não pode ser igual a zero");
             }
         }
 

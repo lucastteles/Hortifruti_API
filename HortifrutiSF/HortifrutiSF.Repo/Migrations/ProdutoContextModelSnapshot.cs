@@ -107,6 +107,10 @@ namespace HortifrutiSF.Repo.Migrations
                         .HasColumnType("decimal(18,2)")
                         .HasColumnName("Preço");
 
+                    b.Property<decimal>("PrecoCusto")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("PrecoCusto");
+
                     b.Property<Guid>("ProdutoId")
                         .HasColumnType("uniqueidentifier");
 
@@ -133,6 +137,10 @@ namespace HortifrutiSF.Repo.Migrations
 
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("PrecoCusto")
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("PrecoCusto");
 
                     b.Property<decimal>("PrecoProduto")
                         .HasColumnType("decimal(18,2)")

@@ -39,5 +39,13 @@ namespace HortifrutiSF.Repo.Repositories
             _produtoContext.Vendas.Remove(venda);
             _produtoContext.SaveChanges();
         }
+
+        public async Task<List<Venda>> ObterTodaVendaPorProduto(Guid idProduto, DateTime? data )
+        {
+            return await _produtoContext.Vendas
+                                       .Include(x => x.Produto)
+                                       .Where(x => x.ProdutoId == idProduto && x.DataCadastro.Date == data )
+                                       .ToListAsync();
+        }
     }
 }

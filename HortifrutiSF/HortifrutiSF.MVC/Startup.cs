@@ -61,6 +61,9 @@ namespace HortifrutiSF.MVC
             services.AddScoped<IVendaRepository, VendaRepository>();
             services.AddScoped<IEstoqueApplication, EstoqueApplication>();
             services.AddScoped<IEstoqueRepository, EstoqueRepository>();
+            services.AddScoped<ILucroApplication, LucroApplication>();
+
+            services.AddSession();////
         }
 
 
@@ -82,6 +85,7 @@ namespace HortifrutiSF.MVC
 
             app.UseRouting();
 
+            app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
 
@@ -89,7 +93,7 @@ namespace HortifrutiSF.MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
             });
         }
     }
