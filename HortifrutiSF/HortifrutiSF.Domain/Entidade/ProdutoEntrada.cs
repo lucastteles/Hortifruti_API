@@ -20,6 +20,7 @@ namespace HortifrutiSF.Domain.Entidade
             Fornecedor = fornecedor;
             ProdutoId = produtoId;
             
+            
 
 
             ValidarPreco();

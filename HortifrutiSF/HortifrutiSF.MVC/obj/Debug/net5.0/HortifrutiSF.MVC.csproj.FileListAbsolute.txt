@@ -23,7 +23,6 @@ C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.M
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\HortifrutiSF.MVC.TagHelpers.output.cache
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\HortifrutiSF.MVC.RazorCoreGenerate.cache
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -173,3 +172,4 @@ C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.M
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Lucro\Index.cshtml.g.cs
+C:\Users\55219\Documents\Projetos GIT\Hortifruti_API\HortifrutiSF\HortifrutiSF.MVC\obj\Debug\net5.0\Razor\Views\Shared\_imagemTexto.cshtml.g.cs

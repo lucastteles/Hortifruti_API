@@ -31,7 +31,8 @@ namespace HortifruitiSF.Application.Application
 
             var nomeProduto = listaDeVendas.FirstOrDefault().Produto.Nome;
 
-            var quantidadeVenda = listaDeVendas.Count();
+            //var quantidadeVenda = listaDeVendas.Count();
+            var quantidadeVenda = listaDeVendas.Sum(c=> c.QuantidadeVenda);
             var valorTotal = listaDeVendas.Sum(c => c.ValorTotal);
 
             var custo = listaDeVendas.Sum(c => c.PrecoCusto);
