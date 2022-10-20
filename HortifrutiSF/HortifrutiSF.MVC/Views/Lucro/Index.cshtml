@@ -1,7 +1,6 @@
 ﻿@model HortifruitiSF.Application.Dto.LucroDto
 
 
-
 @{
     ViewData["Title"] = "Lucro";
 }
@@ -31,17 +30,7 @@
     </div>
 </div>
 
-@*<form>
 
-    <div class="form-group">
-        <label class="control-label">Filtrar Lucro</label>
-        <select asp-for="ProdutoId" class="form-control" asp-items="ViewBag.produto"></select>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Buscar" class="btn btn-primary" />
-    </div>
-
-</form>@**@
 
 @if (ViewBag.Mensagem != null)
 {
@@ -74,22 +63,26 @@ else
                 @Html.DisplayFor(model => model.QuantidadeVenda)
             </dd>
             <dt class="col-sm-2">
-                Preço de Custo
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.PrecoCusto)
-            </dd>
-            <dt class="col-sm-2">
-                Lucro
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Lucro)
-            </dd>
-            <dt class="col-sm-2">
                 Valor Total
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.ValorTotal)
+            </dd>
+            <dt style="color:red"
+             class="col-sm-2">
+                Preço de Custo
+            </dt>
+            <dd style="color:red"
+            class="col-sm-10">
+                @Html.DisplayFor(model => model.PrecoCusto)
+            </dd>
+            <dt style="color:green"
+             class="col-sm-2">
+                Lucro
+            </dt>
+           <dd style="color:green"
+            class="col-sm-10">
+                @Html.DisplayFor(model => model.Lucro)
             </dd>
         </dl>
     </div>

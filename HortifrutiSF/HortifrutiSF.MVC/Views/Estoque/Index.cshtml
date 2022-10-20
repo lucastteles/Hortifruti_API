@@ -22,9 +22,20 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @if (item.QuantidadeEstoque <= 0)
+                {
+
+                
+                <td style ="color:red">
                     @Html.DisplayFor(modelItem => item.QuantidadeEstoque)
-                </td>
+                    </td>
+                }
+                else
+                {
+                  <td>
+                    @Html.DisplayFor(modelItem => item.QuantidadeEstoque)
+                  </td> 
+                }
                 <td>
                     @Html.DisplayFor(modelItem => item.NomeProduto)
                 </td>

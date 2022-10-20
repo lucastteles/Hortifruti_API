@@ -48,6 +48,7 @@ namespace HortifruitiSF.Application.Application
 
             //consultar se o produto já existe no estoque 
             var estoque = await _estoqueRepository.ObterProdutoNoEstoque(vendaVM.ProdutoId);
+
              // se o produto já existe no estoque chama o atualizar (a quantidade)
             
                 estoque.ReduzirQunatidadeDeProdutoNoEstoque(vendaVM.QuantidadeVenda);

@@ -4,6 +4,7 @@ using HortifruitiSF.Application.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +22,7 @@ namespace HortifrutiSF.MVC.Controllers
 
 
         }
-        // GET: LucroController
+       // GET: LucroController
         public async Task<IActionResult> Index(LucroDto lucro, DateTime? data)
         {
             var produto = await _produtoApplication.ObterProdutosApplication();
@@ -44,5 +45,7 @@ namespace HortifrutiSF.MVC.Controllers
 
             return View();
         }
+        
+
     }
 }

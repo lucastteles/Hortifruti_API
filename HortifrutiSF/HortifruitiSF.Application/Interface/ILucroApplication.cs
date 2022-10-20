@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace HortifruitiSF.Application.Interface
 {
-    public interface ILucroApplication 
+    public interface ILucroApplication
     {
-        Task<LucroDto> ObterTodaVendaPorProduto(Guid idProduto, DateTime? data);
+        Task<LucroDto> ObterTodaVendaPorProduto(Guid idProduto, DateTime? data);///forma q estaava
+       // Task<List<LucroDto>> ObterTodaVendaPorData(Guid idProduto, DateTime? data, DateTime? dataInicial, DateTime? dataFinal);
+
+        //Task<List<LucroDto>> ObterTodaVendaPorData(DateTime? dataInicial, DateTime? dataFinal);
     }
 }

@@ -16,7 +16,14 @@ namespace HortifruitiSF.API.Controllers
         {
             _lucroApplication = lucroApplication;
         }
+        /////////
+        //[HttpGet("idProduto")]
+        //public async Task<IActionResult> Obter(Guid idProduto, DateTime? data)
+        //{
+        //    var produto = await _lucroApplication.ObterTodaVendaPorProduto(idProduto, data);
 
+        //    return Ok(produto);
+        //}
         [HttpGet("idProduto")]
         public async Task<IActionResult> Obter(Guid idProduto, DateTime? data)
         {

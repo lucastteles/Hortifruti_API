@@ -21,7 +21,9 @@ namespace HortifruitiSF.Application.Application
 
         }
 
-        public async Task<LucroDto> ObterTodaVendaPorProduto(Guid idProduto, DateTime ? data)
+
+
+        public async Task<LucroDto> ObterTodaVendaPorProduto(Guid idProduto, DateTime? data)
         {
             var listaDeVendas = await _vendaRepository.ObterTodaVendaPorProduto(idProduto, data);
             if (listaDeVendas.Count == 0)
@@ -31,8 +33,8 @@ namespace HortifruitiSF.Application.Application
 
             var nomeProduto = listaDeVendas.FirstOrDefault().Produto.Nome;
 
-            //var quantidadeVenda = listaDeVendas.Count();
-            var quantidadeVenda = listaDeVendas.Sum(c=> c.QuantidadeVenda);
+
+            var quantidadeVenda = listaDeVendas.Sum(c => c.QuantidadeVenda);
             var valorTotal = listaDeVendas.Sum(c => c.ValorTotal);
 
             var custo = listaDeVendas.Sum(c => c.PrecoCusto);
@@ -52,5 +54,7 @@ namespace HortifruitiSF.Application.Application
 
         }
 
+
     }
+    
 }
