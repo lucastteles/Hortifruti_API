@@ -62,13 +62,28 @@ namespace HortifrutiSF.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task <IActionResult> Create(VendaViewModel VendaVM)
         {
-            await _vendaApplication.AdicionarVenda(VendaVM);
-            ViewBag.Mensagem = "Venda Realizada  com sucesso";
-            ViewBag.Mensagem2 = "Alerta";
+            //    await _vendaApplication.AdicionarVenda(VendaVM);
+            //    ViewBag.Mensagem = "Venda Realizada  com sucesso";
+            //    ViewBag.Mensagem2 = "Alerta";
 
-            ModelState.Clear();
+            //    ModelState.Clear();
+
+            //    return View(VendaVM);
+            try
+            {
+                await _vendaApplication.AdicionarVenda(VendaVM);
+                ViewBag.Mensagem = "Venda Realizada com sucesso!";
+                ViewBag.Mensagem2 = "Alerta";
+                ModelState.Clear();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Mensagem = "Produto Indisponível.";
+                ViewBag.Mensagem2 = "Erro";
+            }
 
             return View(VendaVM);
+
         }
 
         // GET: VendaController/Edit/5

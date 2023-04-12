@@ -1,0 +1,246 @@
+﻿#login {
+    background-image: url('../Imagens/Design sem nome (1).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-login {
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-login {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 50%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 100px #5b5b58;
+}
+
+.col-md-10 > center h1 {
+    background: linear-gradient(90deg, rgba(13,204,67,1) 0%, rgba(121,11,9,1) 50%, rgba(255,185,0,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+}
+
+.form-control {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+
+.text-field > label {
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.text-field > input::placeholder {
+    color: #808080;
+}
+
+
+.btn-login {
+    width: 90%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #fff;
+    background: #0dcc43;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px -12px #0dcc43;
+}
+
+
+/*Home*/
+body {
+    margin: 0px;
+}
+
+.background {
+    background-color: #afbdc5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: -425px;
+    width: 200vh;
+    height: 90vh;
+    display: flex; /* Aplica um display flex para criar um container flex */
+    align-items: center;
+}
+
+.left-cartaz {
+    margin-left: 200px;
+    flex: 1
+}
+
+.alem {
+    font-family: Arial, sans-serif; /* Defina o nome da fonte desejada */
+    font-size: 70px; /* Defina o tamanho da fonte desejado */
+    color: black;
+    font-weight: bold;
+}
+
+.financeiro {
+    font-family: Arial, sans-serif; /* Defina o nome da fonte desejada */
+    font-size: 70px; /* Defina o tamanho da fonte desejado */
+    color: green;
+    font-weight: bold;
+}
+
+.right-cartaz {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Container-serviços {
+    background-color: #74ac84;
+    margin-left: -425px;
+    width: 200vh;
+    height: 45vh;
+}
+
+.Caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    flex-wrap: wrap;
+}
+
+.Card {
+    background: #e3e1dd;
+    height: 365px;
+    width: 335px;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+    margin-top: -120px;
+    box-shadow: 10px 10px 40px #000;
+}
+
+    .Card img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #00804b;
+        margin-top: 50px
+    }
+
+    .Card:hover img {
+        border-color: #fff;
+    }
+
+h5 {
+    color: black;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.Paragrafo-button {
+    color: black;
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+    .Paragrafo-button button {
+        margin-top: 25px;
+    }
+
+
+.container-venda {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.label {
+    margin-top: 10px;
+}
+
+.input-produto,
+.input-quantidade,
+.input-preco-unitario {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.botao-adicionar {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.lista-itens {
+    margin-top: 20px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.subtitulo {
+    margin-top: 0;
+}
+
+.total {
+    text-align: right;
+}
+
+.botao-finalizar {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    float: right;
+}

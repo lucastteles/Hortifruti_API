@@ -37,25 +37,39 @@ namespace HortifruitiSF.Application.Application
             var produtoEntrada = await _produtoEntradaRepository.ObterProdutoEntradasPorProdutoId(vendaVM.ProdutoId);
 
 
+            var estoque = await _estoqueRepository.ObterProdutoNoEstoque(vendaVM.ProdutoId);
+
+            if (estoque.QuantidadeEstoque <= 0)
+            {
+                throw new Exception("O produto não está disponível no estoque.");
+            }
+
+            else { 
+
             var venda = new Venda(produto.PrecoVenda,
                                   produtoEntrada.PrecoCusto,
                                   vendaVM.QuantidadeVenda,
                                   vendaVM.ProdutoId);
                                 
 
+
+
             await _vendaRepository.AdicionarVenda(venda);
 
 
             //consultar se o produto já existe no estoque 
-            var estoque = await _estoqueRepository.ObterProdutoNoEstoque(vendaVM.ProdutoId);
-
-             // se o produto já existe no estoque chama o atualizar (a quantidade)
             
-                estoque.ReduzirQunatidadeDeProdutoNoEstoque(vendaVM.QuantidadeVenda);
+
+
+
+
+            // se o produto já existe no estoque chama o atualizar (a quantidade)
+
+            estoque.ReduzirQunatidadeDeProdutoNoEstoque(vendaVM.QuantidadeVenda);
 
                 await _estoqueRepository.AtualizarEstoque(estoque);
-            
 
+            }
         }
 
 

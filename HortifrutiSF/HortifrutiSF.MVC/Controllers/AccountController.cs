@@ -35,7 +35,7 @@ namespace HortifrutiSF.MVC.Controllers
                 return View(loginVM); //retorna a pagina de login
 
             //Se for Valido
-            var user = await _signInManager.PasswordSignInAsync(loginVM.UserName, loginVM.Password, false, false);
+            var user = await _signInManager.PasswordSignInAsync(loginVM.Usuario, loginVM.Senha, false, false);
             if (user.Succeeded)
             {
                 return RedirectToAction("Index", "Home");
@@ -62,10 +62,10 @@ namespace HortifrutiSF.MVC.Controllers
                 //se for valido
                 var user = new IdentityUser
                 {
-                    UserName = resgistroVM.UserName,
-                    Email = resgistroVM.UserName
+                    UserName = resgistroVM.Usuario,
+                    Email = resgistroVM.Usuario
                 };
-                var result = await _userManager.CreateAsync(user, resgistroVM.Password);
+                var result = await _userManager.CreateAsync(user, resgistroVM.Senha);
 
                 //se o resultado foi feito com sucesso
                 if (result.Succeeded)
