@@ -1,4 +1,47 @@
-﻿#login {
+﻿.logo {
+    width: 220px;
+    height: 90px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.login-partial{
+
+}
+/*span1 {
+    color: #000000
+}
+span{
+    color: #ff0000
+}
+span2{
+    color:#000000
+}*/
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+        nav ul li a:hover {
+            color: green;
+            transform: .4s;
+        }
+#login {
     background-image: url('../Imagens/Design sem nome (1).png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -243,4 +286,45 @@ h5 {
     border: none;
     cursor: pointer;
     float: right;
+}
+
+
+/*Tabela Produto*/
+table {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 60px #000;
+    margin-top: 60px;
+}
+
+.produto {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #fff;
+}
+
+
+.btn-produto {
+    padding: 16px 10px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #000;
+    background: #0dcc43;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px -12px #000;
+}
+
+    .btn-produto:hover {
+        color: #000;
+    }
+
+
+body {
+    background-color: #afbdc5;
 }

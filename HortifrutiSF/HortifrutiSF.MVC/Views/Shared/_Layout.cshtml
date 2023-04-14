@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+       @* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
                     <img src="~/imagens/logo site.png" alt="some text" width=220 height=60>
@@ -32,11 +32,26 @@
                          <li class="nav-item">
                             <a class="nav-link text-success" asp-area="" asp-controller="Venda" asp-action="Index">Vendas</a>
                         </li>
-                        @await Html.PartialAsync("_LoginPartial")@*  // Rota de Login*@
+                        @await Html.PartialAsync("_LoginPartial")  
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>*@
+
+        <nav>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/imagens/logo site.png" class="logo">
+                    </a>
+            
+
+        <ul class="cabeçalho-link">
+            <li><a href="/Produto/Index">Produto</a></li>
+            <li><a href="/ProdutoEntrada/Index">ProdutoEntrada</a></li>
+            <li><a href="/Estoque/Index">Estoque</a></li>
+            <li><a href="/Venda/Index">Venda</a></li>
+            <li style="color: white;">@await Html.PartialAsync("_LoginPartial")</li>
+        </ul><!--cabeçalho-link-->
+    </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
